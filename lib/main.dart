@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'MyPhoto.dart';
+
 void main(){
   runApp(const MyApp());
 }
@@ -9,8 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      return Scaffold(
-        body: MyBody(),
+      return MaterialApp(
+        color: Colors.yellow,
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          backgroundColor: Colors.yellow,
+          body: MyBody()
+          ),
       );
     
   }
@@ -21,6 +28,6 @@ class MyBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("Hello");
+    return MyPhoto();
   }
 }
