@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:dots_indicator/dots_indicator.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class MyPhoto extends StatelessWidget {
-  const MyPhoto({Key? key}) : super(key: key);
+  MyPhoto({Key? key}) : super(key: key);
+  final controller = PageController(viewportFraction: 0.8, keepPage: true);
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +27,20 @@ class MyPhoto extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+                  child: DotsIndicator(
+                    dotsCount: 3,
+                    position: 0.0,
+                    decorator: DotsDecorator(
+                      activeColor: Colors.black,
+                      size: const Size.square(9.0),
+                      activeSize: const Size(18.0, 9.0),
+                      activeShape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0)),
+                    ),
+                  ),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
